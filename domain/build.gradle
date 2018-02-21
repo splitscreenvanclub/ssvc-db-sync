@@ -1,0 +1,3 @@
+dependencies {
+    compile 'com.github.splitscreenvanclub.ssvc-lib-core:ssvc-core-domain:master-SNAPSHOT'
+}

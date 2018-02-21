@@ -1,0 +1,24 @@
+apply plugin: "net.ltgt.apt"
+apply plugin: "application"
+
+dependencies {
+    compile project(':ssvc-db-sync-integration'), project(':ssvc-db-sync-domain')
+    compile 'com.google.dagger:dagger:2.0.2'
+    apt 'com.google.dagger:dagger-compiler:2.0.2'
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'SsvcDbSync',
+                'Implementation-Version': "$version",
+                'Main-Class': 'uk.org.ssvc.dbsync.application.SsvcDbSyncApplication'
+    }
+    baseName = 'dbsync'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+build.finalizedBy(fatJar)
+
+mainClassName = "uk.org.ssvc.dbsync.application.SsvcDbSyncApplication"
+applicationDefaultJvmArgs = []

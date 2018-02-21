@@ -1,0 +1,30 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.war
+*.ear
+
+*.iml
+/.gradle
+*.idea
+/build/*
+/domain/build/*
+/integration/build/*
+/out/*
+**/out/*
+
+*/out/
+**/.DS_Store*
+*.DS_Store
+
+**.log
+**/*.log
+*/generated
+
+cache
+*.hprof

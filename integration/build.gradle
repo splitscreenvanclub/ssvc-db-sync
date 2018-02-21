@@ -1,0 +1,11 @@
+dependencies {
+    compile project(':ssvc-db-sync-domain')
+    compile 'com.github.splitscreenvanclub.ssvc-lib-core:ssvc-core-integration:master-SNAPSHOT'
+    compile 'com.github.splitscreenvanclub.ssvc-lib-firestore:ssvc-firestore-integration:master-SNAPSHOT'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.6.4'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.4'
+    compile 'org.jsoup:jsoup:1.8.3'
+    compile 'org.apache.commons:commons-csv:1.4'
+    compile 'org.jsoup:jsoup:1.11.2'
+    compile 'com.jayway.restassured:rest-assured:2.8.0'
+}

@@ -1,0 +1,11 @@
+rootProject.name = 'ssvc-db-sync'
+include 'domain'
+include 'integration'
+include 'application'
+
+rootProject.children.each{ adjustName(it) }
+
+def adjustName(module) {
+    module.name = 'ssvc-db-sync-' + module.name
+}
+

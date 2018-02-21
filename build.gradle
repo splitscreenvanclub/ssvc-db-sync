@@ -1,0 +1,39 @@
+apply plugin: 'java'
+group 'uk.org.ssvc.dbsync'
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    sourceCompatibility = 1.8
+    group 'uk.org.ssvc.dbsync'
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        compile 'javax.inject:javax.inject:1'
+        compile 'org.projectlombok:lombok:1.16.6'
+        compile 'com.google.guava:guava:22.0'
+        compile 'org.apache.commons:commons-lang3:3.0'
+        compile 'com.papertrailapp:logback-syslog4j:1.0.0'
+        testCompile 'org.mockito:mockito-core:1.9.5'
+        testCompile 'org.hamcrest:hamcrest-all:1.3'
+        testCompile 'junit:junit:4.12'
+        testCompile 'org.assertj:assertj-core:3.3.0'
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "net.ltgt.gradle:gradle-apt-plugin:0.5"
+    }
+}
+

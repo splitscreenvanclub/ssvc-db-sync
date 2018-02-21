@@ -1,0 +1,1 @@
+java -Dfile.encoding=UTF8 -jar application/build/libs/dbsync-1.0.jar
