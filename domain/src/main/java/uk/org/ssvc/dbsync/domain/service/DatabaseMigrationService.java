@@ -24,6 +24,7 @@ public class DatabaseMigrationService {
     public void migrateToCurrentDatabase() {
         log.info("Running migration...");
         currentRepository.addAll(legacyRepository.findAll());
+        log.info("Completed migration");
     }
 
 }
