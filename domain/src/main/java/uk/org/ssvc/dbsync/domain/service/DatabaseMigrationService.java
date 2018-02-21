@@ -1,5 +1,6 @@
 package uk.org.ssvc.dbsync.domain.service;
 
+import lombok.extern.slf4j.Slf4j;
 import uk.org.ssvc.core.domain.repository.MemberRepository;
 
 import javax.inject.Inject;
@@ -7,6 +8,7 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 
 @Singleton
+@Slf4j
 public class DatabaseMigrationService {
 
     private final MemberRepository legacyRepository;
@@ -20,6 +22,7 @@ public class DatabaseMigrationService {
     }
 
     public void migrateToCurrentDatabase() {
+        log.info("Running migration...");
         currentRepository.addAll(legacyRepository.findAll());
     }
 
