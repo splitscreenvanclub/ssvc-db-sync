@@ -15,7 +15,7 @@ subprojects {
     dependencies {
         compile 'javax.inject:javax.inject:1'
         compile 'org.projectlombok:lombok:1.16.6'
-        compile 'com.google.guava:guava:22.0'
+        compile 'com.google.guava:guava:20.0'
         compile 'org.apache.commons:commons-lang3:3.0'
         compile 'com.papertrailapp:logback-syslog4j:1.0.0'
         testCompile 'org.mockito:mockito-core:1.9.5'
