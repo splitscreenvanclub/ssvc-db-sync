@@ -4,6 +4,7 @@ apply plugin: "application"
 dependencies {
     compile project(':ssvc-db-sync-integration'), project(':ssvc-db-sync-domain')
     compile 'com.google.dagger:dagger:2.0.2'
+    compile 'com.google.guava:guava:22.0'
     apt 'com.google.dagger:dagger-compiler:2.0.2'
 }
 
