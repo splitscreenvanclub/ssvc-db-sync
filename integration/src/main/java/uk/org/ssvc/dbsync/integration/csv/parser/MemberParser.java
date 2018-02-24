@@ -33,13 +33,16 @@ public class MemberParser {
     private final static String DATE_PATTERN = "(([0-9]{1,2})[\\./\\-]([0-9]{1,2})[\\./\\-]([0-9]{2,4}))";
     private final static Pattern CHILDREN_PATTERN = Pattern.compile("([A-Z][a-z]+)( ([A-Za-z][A-Za-z]+?))??\\s*(DOB|dob)?\\s*" + DATE_PATTERN);
 
+
+    private static final String MEMBER_ID_FIELD = "fldMembershipNumber";
+
     @Inject
     public MemberParser() {
     }
 
     public Member parse(CSVRecord csvRecord) {
         return Member.builder()
-            .id(normalise(csvRecord.get("fldMembershipNumber")))
+            .id(normalise(csvRecord.get(MEMBER_ID_FIELD)))
             .firstName(names(csvRecord.get("fldFirstName")).get(0))
             .lastName(name(csvRecord.get("fldSurname")))
             .associates(parseAssociates(csvRecord))
@@ -151,7 +154,7 @@ public class MemberParser {
             }
             catch (Exception e) {
                 log.info("Failed to parse potential seedling information, ignoring record={} error={}",
-                    csvRecord, e.getMessage());
+                    csvRecord.get(MEMBER_ID_FIELD), e.getMessage());
             }
         }
 
