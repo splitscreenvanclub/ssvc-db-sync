@@ -3,8 +3,9 @@ dependencies {
     compile ('com.github.splitscreenvanclub.ssvc-lib-core:ssvc-core-integration:master-SNAPSHOT') {
         changing = true
     }
-    compile ('com.github.splitscreenvanclub.ssvc-lib-firestore:ssvc-firestore-integration:a6dc819') {
+    compile ('com.github.splitscreenvanclub.ssvc-lib-firestore:ssvc-firestore-integration:8ac8d7a') {
         changing = true
+        exclude group: 'com.google.guava'
     }
     compile 'com.fasterxml.jackson.core:jackson-core:2.6.4'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.6.4'
