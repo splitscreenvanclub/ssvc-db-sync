@@ -1,7 +1,11 @@
 dependencies {
     compile project(':ssvc-db-sync-domain')
-    compile 'com.github.splitscreenvanclub.ssvc-lib-core:ssvc-core-integration:master-SNAPSHOT'
-    compile 'com.github.splitscreenvanclub.ssvc-lib-firestore:ssvc-firestore-integration:master-SNAPSHOT'
+    compile ('com.github.splitscreenvanclub.ssvc-lib-core:ssvc-core-integration:master-SNAPSHOT') {
+        changing = true
+    }
+    compile ('com.github.splitscreenvanclub.ssvc-lib-firestore:ssvc-firestore-integration:master-SNAPSHOT') {
+        changing = true
+    }
     compile 'com.fasterxml.jackson.core:jackson-core:2.6.4'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.6.4'
     compile 'org.jsoup:jsoup:1.8.3'
