@@ -3,7 +3,7 @@ dependencies {
     compile ('com.github.splitscreenvanclub.ssvc-lib-core:ssvc-core-integration:master-SNAPSHOT') {
         changing = true
     }
-    compile ('com.github.splitscreenvanclub.ssvc-lib-firestore:ssvc-firestore-integration:master-SNAPSHOT') {
+    compile ('com.github.splitscreenvanclub.ssvc-lib-firestore:ssvc-firestore-integration:a6dc819') {
         changing = true
     }
     compile 'com.fasterxml.jackson.core:jackson-core:2.6.4'
